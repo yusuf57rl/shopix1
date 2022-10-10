@@ -1,11 +1,7 @@
 <?php
 
 require_once('../private/initialize.php');
-$categorie = $_GET["cd"];
-$productid = $_GET["id"];
 
-
-?><?php
 $filename1 = "products.php?id=1";
 $filename2 = "products.php?id=2";
 $filename3 = "products.php?id=3";
@@ -28,7 +24,7 @@ $filename3 = "products.php?id=3";
 
 <section class="buttons">
     <br>
-    <h1>Shopix</h1>
+    <h1>&nbsp; Shopix</h1>
 
     <div class="space"></div>
     <div class="space"></div>
