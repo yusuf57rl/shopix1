@@ -7,7 +7,7 @@ $filename2 = "products.php?id=2";
 $filename3 = "products.php?id=3";
 ?>
 
-<html>
+<html lang="en">
 <head>
 
     <meta charset="UTF-8">

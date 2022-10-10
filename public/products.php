@@ -5,6 +5,7 @@ require_once('../private/initialize.php');
 if(isset($_GET["id"])){
     $productid = $_GET["id"];
 } else {
+    $productid = 1;
     header('Location: index.php');
 }
 ?>
