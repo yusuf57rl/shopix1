@@ -28,7 +28,7 @@ $filename3 = "products.php?id=3";
 
 <section class="buttons">
     <br>
-    <h1>OOP Project 1</h1>
+    <h1>Shopix</h1>
 
     <div class="space"></div>
     <div class="space"></div>
