@@ -47,7 +47,7 @@ $categoryid = $_GET["id"];
         foreach ($produktjs as $produktjss) {
             foreach ($produktjss as $produktj) {
                 foreach ($produktss as $produktsss) {
-                if(($produktj["id"] === $categoryid) && $produktsss["categoryid"] === $categoryid) {
+                if(($produktj["id"] === $categoryid) && $produktsss["categoryid"] === $produktj["id"]) {
 
                     ?>
 
@@ -65,7 +65,7 @@ $categoryid = $_GET["id"];
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title"><small class="text-muted"></small></h1>
                             <ul>
-                                <li><?php echo $produktjss[$categoryid]['designation']; ?></li>
+                                <li><?php echo $produktsss[$categoryid]['name']; ?></li>
                             </ul>
                             <ul>
                                 <li><?php echo $produktjss[$categoryid]['designation']; ?></li>
