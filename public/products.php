@@ -38,16 +38,9 @@ $categoryid = $_GET["id"];
 
         <?php
 
-        $cate = new category();
-        $produktjs = $cate->clothes();
-
         $pro = new products();
-        $produktss = $pro->product();
-
-        foreach ($produktjs as $produktjss) {
-            foreach ($produktjss as $produktj) {
-                foreach ($produktss as $produktsss) {
-                if(($produktj["id"] === $categoryid) && $produktsss["categoryid"] === $produktj["id"]) {
+        $products = $pro->getProductsByCategoryId((int)$categoryid);
+        foreach ($products as $product) {
 
                     ?>
 
@@ -55,7 +48,7 @@ $categoryid = $_GET["id"];
                         <div class="card-header">
                             <h4 class="my-0 font-weight-normal">
 
-                                <?php echo $produktjss[$categoryid]['name'];
+                                <?php echo $product[$categoryid]['name'];
                                 echo "<br>";
 
                                 ?>
@@ -65,25 +58,16 @@ $categoryid = $_GET["id"];
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title"><small class="text-muted"></small></h1>
                             <ul>
-                                <li><?php echo $produktsss[$categoryid]['name']; ?></li>
+                                <li><?php echo $product[$categoryid]['name']; ?></li>
                             </ul>
                             <ul>
-                                <li><?php echo $produktjss[$categoryid]['designation']; ?></li>
+                                <li><?php echo $product[$categoryid]['designation']; ?></li>
                             </ul>
                             <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy</button>
                         </div>
                     </div>
 
-                <?php } else {
-                    echo "<p style='color:white'> VAR_DUMP - Produktsss: &nbsp;<br>";
-                    var_dump($produktsss);
-                    echo "</p>";
-                    echo "<p style='color:white'> VAR_DUMP - Produktjss &nbsp;<br>";
-                    var_dump($produktjss);
-                    echo "</p>";
-                }
-
-                }
-            }
-        } ?>
+                <?php
+        }
+        ?>
 
