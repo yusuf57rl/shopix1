@@ -1,6 +1,6 @@
 <?php
 
-require_once('../private/initialize.php');
+require_once(__DIR__ . '/../private/initialize.php');
 
 $productid = $_GET["id"];
 
