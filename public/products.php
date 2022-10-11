@@ -75,8 +75,9 @@ $categoryid = $_GET["id"];
                     </div>
 
                 <?php } else {
-                    echo "<p style='color:white'> FEHLER:";
+                    echo "<p style='color:white'> FEHLER: &nbsp;<br>";
                     var_dump($produktsss);
+                    echo "</p>";
                 }
 
                 }
