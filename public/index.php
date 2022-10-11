@@ -29,16 +29,16 @@ $filename3 = "products.php?id=3";
     <div class="space"></div>
     <div class="space"></div>
     <div class="buttonzsm">
-        <a href="<?php echo $filename1; ?>" target="_blank">&nbsp;<button class="button-3">
+        <a href="<?php echo $filename1; ?>">&nbsp;<button class="button-3">
                 <h2> Jacken &nbsp;</h2>
             </button></a>
             <div class="space"></div>
-        <a href="<?php echo $filename2; ?>" target="_blank">&nbsp;
+        <a href="<?php echo $filename2; ?>">&nbsp;
         <button class="button-3">
                 <h2> Hosen &nbsp;</h2>
             </button></a>
             <div class="space"></div>
-        <a href="<?php echo $filename3; ?>" target="_blank">&nbsp;
+        <a href="<?php echo $filename3; ?>">&nbsp;
             <button class="button-3">
                 <h2> T-Shirts &nbsp; </h2>
             </button></a>
