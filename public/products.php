@@ -2,7 +2,7 @@
 
 require_once(__DIR__ . '/../private/initialize.php');
 
-$productid = $_GET["id"];
+$categoryid = $_GET["id"];
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $productid = $_GET["id"];
         <a class="p-2 text-dark" href="#">Jacken</a>
         <a class="p-2 text-dark" href="#">Hosen</a>
     </nav>
-    <a class="btn btn-outline-primary" href="#"><?php echo $productid; ?></a>
+    <a class="btn btn-outline-primary" href="#"><?php echo $categoryid; ?></a>
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -38,41 +38,45 @@ $productid = $_GET["id"];
 
         <?php
 
-        $cate = new categories();
+        $cate = new category();
         $produktjs = $cate->clothes();
 
+        $pro = new products();
+        $produktss = $pro->product();
+
         foreach ($produktjs as $produktjss) {
-            if ($produktjss[0]["id"] === $productid) {
+            foreach ($produktjss as $produktj) {
+                foreach ($produktss as $produktsss) {
+                if(($produktj["id"] === $categoryid) && $produktsss["categoryid"] === $categoryid) {
 
-                ?>
+                    ?>
 
-                <div class="card mb-4 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
 
-                            <?php echo $produktjss[$productid]['name'] . " - Produktjs:" . $produktjss[$productid]['id'] . " - GET:" . $productid;
-                            echo "<br>";
+                                <?php echo $produktjss[$categoryid]['name'];
+                                echo "<br>";
 
-                            var_dump($produktjss[0]);
+                                ?>
 
-
-
-                            ?>
-
-                        </h4>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><small class="text-muted"></small></h1>
+                            <ul>
+                                <li><?php echo $produktjss[$categoryid]['designation']; ?></li>
+                            </ul>
+                            <ul>
+                                <li><?php echo $produktjss[$categoryid]['designation']; ?></li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy</button>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title"><small class="text-muted"></small></h1>
-                        <ul>
-                            <li><?php echo $produktjss[$productid]['designation']; ?></li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy</button>
-                    </div>
-                </div>
 
-            <?php } else {
-                echo "existiert leider nicht!";
-                // header('Location: index.php');
+                <?php }
+
+                }
             }
         } ?>
 
